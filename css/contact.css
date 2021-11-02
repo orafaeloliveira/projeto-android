@@ -1,0 +1,268 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@font-face {
+    font-family: 'Android';
+    src: url(../fonts/idroid.otf) format('opentype');
+    font-weight: normal;
+}
+
+/* pseudoclasse raiz do documento, tudo o que for definido aqui vai servir para o documento inteiro */
+:root {
+    --color0: #C5EBD6;
+    --color1: #B3E1AD;
+    --color2: #3DDC84;
+    --color3: #2FA866;
+    --color4: #1A5C37;
+    --color5: #063D1E;
+    --font-standard: Arial, Helvetica, sans-serif;
+    --font-emphasis: 'Bebas Neue', cursive, sans-serif;
+    --font-android: 'Android', cursive, sans-serif;
+    --max-width: 800px;
+    --min-width: 400px;
+    --shadow1: 0px 0px 10px rgba(0, 0, 0, 0.363);
+    --shadow2: 3px 3px 8px rgba(0, 0, 0, 0.363);
+}
+
+/* configuração global de todos os elementos da HTML, no caso todos terão margin 0 */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-standard);
+    background-color: var(--color2);
+}
+
+#header {
+    background-image: linear-gradient(var(--color3), var(--color5));
+    text-align: center;
+    min-height: 150px;
+    min-width: var(--min-width);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
+}
+
+header > h1 {
+    font-family: var(--font-emphasis), cursive;
+    font-size: 3em;
+    font-weight: normal;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.267);
+}
+
+header > p {
+    font-family: var(--font-standard);
+    font-size: 1.2em;
+    position: relative;
+    top: 20px;
+    margin: auto;
+    max-width: 500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.267);
+}
+
+#menu {
+    background-color: var(--color5);
+    padding: 10px;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.363);
+    min-width: var(--min-width);
+    margin-top: 0px;
+}
+
+#menu > a {
+    color: var(--color1);
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#menu > a:hover {
+    transition: 0.5s;
+    background-color: var(--color3);
+    color: var(--color5);
+}
+
+/**
+    Corrigir H1 do cabeçalho entre 411px e 436px
+*/
+@media screen and (max-width: 435px) {
+    #header{
+        padding: 10px;
+        /**
+            min-height: 100px;
+            background-image: linear-gradient(var(--color3), var(--color4));
+        */
+    }
+    header > h1{
+        margin-bottom: -10px;
+        font-size: 2.7em;
+        max-width: 380px;
+        margin: auto;
+    }
+    header > p{
+        top: 10px;
+        font-size: 1.1em;
+    }
+    #menu{
+        margin: auto;
+        /**
+        menu vertical centralizado
+            text-align: center;
+            padding: 0px;
+            background-image: linear-gradient(var(--color4), var(--color5));
+        */
+    }  
+    #menu a{
+        /**
+            text-align: center;
+            display: block;
+        */
+        font-size: 0.9em;
+    }
+
+    .spn-gender {
+        margin-left: 0px;
+        font-size: 0.9em;
+    }
+
+    .rd-gender {
+        margin-left:0px;
+    }
+}
+
+#main {
+    background-color: white;
+    margin: auto;
+    color: black;
+    font-family: var(--font-standard);
+    min-width: var(--min-width);
+    max-width: var(--max-width);
+    box-shadow: var(--shadow1);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+div > h3 {
+    background-color: var(--color4);
+    padding: 10px;
+    margin: -10px;
+    border-radius: 10px 10px 0px 0px;
+    color: white;
+}
+
+#form {
+    position: relative;
+    margin: auto;
+    max-width: 400px;
+    background-color: var(--color1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: var(--shadow2);
+}
+
+div > form {
+    margin-top: 10px;
+    padding: 20px;
+}
+
+form input, select, textarea, .gender {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px rgb(133, 133, 133);
+}
+
+textarea {
+    resize: none;
+}
+
+select {
+    background-color: white;
+}
+
+.gender {
+    background-color: white;
+    height: 40px;
+}
+
+.spn-gender {
+    float: left;
+    margin-left: 10%;
+}
+
+.rd-gender{
+    display: block;
+    width: 13px;
+    float: left;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.mb {
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: var(--color4);
+    color: white;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: white;
+    color: var(--color4);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#btn-up {
+    background-color: #c5ebd696;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    line-height: 50px;
+    text-align: center;
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    text-decoration: none;
+    color: var(--color5);
+    box-shadow: var(--shadow1);
+}
+
+#btn-up:visited{
+    color: var(--color5);
+}
+
+#btn-up:hover {
+    background-color: var(--color5);
+    color: var(--color0);
+    transition: 0.5s;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+    color: white;
+    background-color: var(--color5);
+    font-size: 0.9em;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--color1);
+}
