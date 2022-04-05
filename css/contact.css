@@ -32,6 +32,7 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100vw;
 }
 
 body {
@@ -92,8 +93,13 @@ header > p {
 
 /**
     Corrigir H1 do cabeçalho entre 411px e 436px
+    
 */
 @media screen and (max-width: 435px) {
+    /* Correção body e footer abaixo dos 400px */
+    body {
+        min-width: 400px;
+    }
     #header{
         padding: 10px;
         /**
@@ -192,19 +198,20 @@ select {
 .gender {
     background-color: white;
     height: 40px;
+    display: flex;
+    flex-flow: row;
 }
 
 .spn-gender {
     float: left;
-    margin-left: 10%;
+    margin: auto;
 }
 
 .rd-gender{
     display: block;
     width: 13px;
     float: left;
-    margin-left: 10px;
-    margin-right: 20px;
+    margin: auto;
 }
 
 .mb {
